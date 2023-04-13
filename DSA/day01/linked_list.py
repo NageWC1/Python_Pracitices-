@@ -70,13 +70,61 @@ class linkedList:
                 self.head = self.head.next
                 return
         while itr:
-            
             if count == ind - 1:
                 itr.next = itr.next.next
+                break
+            itr = itr.next
+            count += 1
+        
+    def insert_at(self, ind,data):
+            lenth = self.get_length()
+            itr = self.head
+            if ind >= lenth or ind < 0:
+                raise Exception("the index is out of bound")
+            
+            if ind == 0:
+                self.insert_at_beggining(data)
+
+            
+            itr = self.head
+            count = 0
+            while itr:
+                if count == ind - 1:
+                    node = Node(data, itr.next)
+                    itr.next = node
+                    break
+                itr = itr.next
+                count += 1
+
+    def insert_after_at_ind(self,ind, data):
+        if ind < 0 or ind >= self.get_length():
+            raise Exception("the index is invalid")
+        
+        itr = self.head
+        count = 0
+        while itr:
+            if count == ind:
+                node = Node(data, itr.next)
+                itr.next = node
+                break
             itr = itr.next
             count += 1
 
+    def delete_by_value(self,value):
+        itr = self.head 
 
+        if self.head.data == value:
+            self.head = None
+        count = 0
+        while itr: 
+            if itr.data == value:
+                self.remove_ele_at_ind(count)
+                break
+
+            itr = itr.next
+            count += 1
+                
+    
 if __name__ == "__main__":
     ll = linkedList()
     ll.insert_at_beggining(5)
@@ -88,7 +136,14 @@ if __name__ == "__main__":
     # check with entering list of values to the linked list 
     ll.insert_values([12,13,14,15])
 
+    ll.insert_at(1,100)
     ll.print()
-    ll.remove_ele_at_ind(1)
+    ll.insert_at(4,1400)
+    ll.print()
+    ll.insert_after_at_ind(2,10)
+    ll.print()
+    ll.delete_by_value(10)
+    ll.print()
+    ll.delete_by_value(15)
     ll.print()
     print(ll.get_length()) 
