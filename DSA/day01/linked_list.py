@@ -1,1 +1,55 @@
 # day one linked list practice
+# this is represent individual element of the linked list 
+class Node:
+    def __init__(self, data:None, next:None):
+        self.data = data 
+        self.next = next #pointer to the next element
+
+# this will point to the head of the linkedlist 
+class linkedList:
+    def __init__(self):
+        self.head = None
+
+    # Imagin im going to insert a value infront of the linked list 
+    def insert_at_beggining(self,data):
+        # create a node element and pass the head element as next element 
+        # because the head should be now next to the new head element 
+        node = Node(data, self.head)
+        # and set that element as head now 
+        self.head = node
+
+    def print(self):
+        if self.head is None:
+            print("The linked is emepty")
+            return 
+        # initially we assign the head of the element to the itr so we can check the element 
+        # has value in the next and find out 
+        itr = self.head
+        list_str  = ''
+     
+        while itr:
+            list_str += str(itr.data) + '-->'
+            itr = itr.next
+        print(list_str)
+
+    def insert_end(self, data):
+        if self.head is None:
+            node = Node(data, None)
+            return node
+        
+        itr = self.head
+        while itr.next:
+            itr = itr.next
+        
+        # automatically the while loop will be end when there is no next value, that mean we are now 
+        # in the last element
+        # we settting the last element as None becase the last element will not have the next element 
+        itr.next = Node(data, None)
+
+if __name__ == "__main__":
+    ll = linkedList()
+    ll.insert_at_beggining(5)
+    ll.insert_at_beggining(15)
+    ll.insert_at_beggining(23)
+    ll.insert_end(33)
+    ll.print()
