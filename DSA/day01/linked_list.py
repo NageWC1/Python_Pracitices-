@@ -34,8 +34,8 @@ class linkedList:
 
     def insert_end(self, data):
         if self.head is None:
-            node = Node(data, None)
-            return node
+            self.head = Node(data, None)
+            return 
         
         itr = self.head
         while itr.next:
@@ -46,10 +46,31 @@ class linkedList:
         # we settting the last element as None becase the last element will not have the next element 
         itr.next = Node(data, None)
 
+    def insert_values(self, data_list):
+        # wipping out all the values from previous linked list
+        self.head = None
+        for data in data_list:
+            self.insert_end(data)
+    
+    def get_length(self):
+        itr = self.head
+        count = 0
+        while itr:
+            count += 1
+            itr = itr.next
+        print(count)
+
+
 if __name__ == "__main__":
     ll = linkedList()
     ll.insert_at_beggining(5)
     ll.insert_at_beggining(15)
     ll.insert_at_beggining(23)
     ll.insert_end(33)
+    ll.insert_end(55)
+
+    # check with entering list of values to the linked list 
+    ll.insert_values([12,13,14,15])
+
     ll.print()
+    ll.get_length()
