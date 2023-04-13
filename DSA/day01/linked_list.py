@@ -58,7 +58,23 @@ class linkedList:
         while itr:
             count += 1
             itr = itr.next
-        print(count)
+        return count
+
+    def remove_ele_at_ind(self, ind):
+        lenth = self.get_length()
+        itr = self.head
+        if ind >= lenth or ind < 0:
+            raise Exception("the index is out of bound")
+        count = 0
+        if ind == 0:
+                self.head = self.head.next
+                return
+        while itr:
+            
+            if count == ind - 1:
+                itr.next = itr.next.next
+            itr = itr.next
+            count += 1
 
 
 if __name__ == "__main__":
@@ -73,4 +89,6 @@ if __name__ == "__main__":
     ll.insert_values([12,13,14,15])
 
     ll.print()
-    ll.get_length()
+    ll.remove_ele_at_ind(1)
+    ll.print()
+    print(ll.get_length()) 
