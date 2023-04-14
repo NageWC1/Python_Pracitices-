@@ -2,9 +2,9 @@ from collections import deque
 
 class Queue:
     def __init__(self):
-        self.buffer = deque
+        self.buffer = deque()
     
-    def insert(self,val):
+    def enqueue(self,val):
         self.buffer.appendleft(val)
     
     def pop(self):
@@ -19,9 +19,9 @@ class Queue:
 if __name__ == "__main__":
     q  = Queue()
 
-    q.insert(1)
-    q.insert(12)
-    q.insert(13)
+    q.enqueue(1)
+    q.enqueue(12)
+    q.enqueue(13)
     print(q.pop())
     print(q.pop())
     print(q.pop())
