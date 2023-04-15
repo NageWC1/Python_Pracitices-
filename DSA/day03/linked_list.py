@@ -68,6 +68,16 @@ class LinkedList:
         for data in list:
             self.insert_at_end(data)
 
+    def insert_after_at_ind(self, ind, data):
+        count = 0
+        itr = self.head
+
+        while itr:
+            if count == ind:
+                node = Node(data, itr.next)
+                itr.next = data
+            itr = itr.next
+            count += 1
 if __name__ == "__main__":
     ll = LinkedList()
 
@@ -83,3 +93,4 @@ if __name__ == "__main__":
     list = [12,13,14,15,16]
     ll.insert_list(list)
     ll.print()
+    ll.insert_after_at_ind(2,1000)
