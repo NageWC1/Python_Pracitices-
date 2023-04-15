@@ -11,6 +11,7 @@ class LinkedList:
 
     def insert_at_beggining(self, data):
         node = Node(data, self.head)
+        self.head = node
 
     def insert_at_end(self, data):
         itr = self.head
@@ -48,6 +49,18 @@ class LinkedList:
         
         print(l_str)
     
+    def remove(self, ind):
+        count = 0 
+        itr = self.head
+
+        if ind == 0:
+            self.head = itr.next
+        while itr:
+            if count == ind - 1:
+                itr.next = itr.next.next
+
+            itr = itr.next
+            count += 1
 if __name__ == "__main__":
     ll = LinkedList()
 
@@ -57,4 +70,6 @@ if __name__ == "__main__":
     ll.insert_at_end(100)
     ll.insert_at_end(101)
     ll.insert_at_end(102)
+    ll.print()
+    ll.remove(3)
     ll.print()
