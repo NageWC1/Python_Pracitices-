@@ -98,4 +98,5 @@ if __name__ == "__main__":
     ll.insert_list(list)
     ll.print()
     ll.insert_after_at_ind(2,1000)
+    ll.insert_after_at_ind(2,1001)
     ll.print()
