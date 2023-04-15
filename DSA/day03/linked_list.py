@@ -61,6 +61,13 @@ class LinkedList:
 
             itr = itr.next
             count += 1
+    
+    def insert_list(self, list):
+        self.head = None
+
+        for data in list:
+            self.insert_at_end(data)
+
 if __name__ == "__main__":
     ll = LinkedList()
 
@@ -72,4 +79,6 @@ if __name__ == "__main__":
     ll.insert_at_end(102)
     ll.print()
     ll.remove(3)
+    ll.print()
+    list = [12,13,14,15,16]
     ll.print()
