@@ -81,4 +81,5 @@ if __name__ == "__main__":
     ll.remove(3)
     ll.print()
     list = [12,13,14,15,16]
+    ll.insert_list(list)
     ll.print()
