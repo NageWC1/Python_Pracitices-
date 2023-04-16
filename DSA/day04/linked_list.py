@@ -70,6 +70,7 @@ class LinkedList:
             count += 1
 
 if __name__ == "__main__":
+    # All done 
     ll = LinkedList()
     ll.insert_at_beggining(10)
     ll.insert_at_beggining(11)
