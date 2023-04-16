@@ -5,20 +5,21 @@ class Stack:
         self.stack = deque()
 
     def insert(self, data):
-        pass
+        self.stack.append(data)
 
     def delete(self):
-        pass
+        return self.stack.pop()
 
     def size(self):
-        pass
+        return len(self.stack)
 
     def is_empty(self):
-        pass
+        return len(self.stack) ==  0 
 if __name__ == "__main__":
     s = Stack()
     s.insert(10)
     s.insert(11)
     s.insert(12)
     s.insert(13)
-    
+    s.is_empty()
+    print(s.size())
