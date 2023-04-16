@@ -31,7 +31,15 @@ class LinkedList:
         print(l_str)
     
     def remove_at(self, ind):
-        pass
+        count = 0 
+        itr = self.head 
+        while itr:
+            if count == ind - 1:
+                itr.next = itr.next.next 
+                break
+            itr = itr.next
+            count += 1
+
 
     def insert_at_index(self, ind, data):
         pass
@@ -50,4 +58,6 @@ if __name__ == "__main__":
     ll.insert_at_end(23)
     ll.insert_at_end(24)
     ll.insert_at_end(25)
+    ll.print()
+    ll.remove_at(3)
     ll.print()
