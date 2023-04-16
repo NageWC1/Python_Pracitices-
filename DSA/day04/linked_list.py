@@ -19,15 +19,19 @@ class LinkedList:
         itr = self.head 
         while itr.next:
             itr = itr.next
-        itr.next = Node(data, None)
+        node = Node(data, None)
+        itr.next = node
     
     def print(self):
         l_str = ''
         itr = self.head 
         while itr:
-            l_str = str(itr.data) + '-->'
+            l_str += str(itr.data) + '-->'
             itr = itr.next
         print(l_str)
+    
+    def remove_at(self, ind):
+        pass
 
     def insert_at_index(self, ind, data):
         pass
