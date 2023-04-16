@@ -15,6 +15,13 @@ class Stack:
 
     def is_empty(self):
         return len(self.stack) ==  0 
+    
+    def print(self):
+        st = ''
+        for data in self.stack:
+            st += str(data) + '|'
+        print(st)
+
 if __name__ == "__main__":
     s = Stack()
     s.insert(10)
@@ -23,3 +30,5 @@ if __name__ == "__main__":
     s.insert(13)
     s.is_empty()
     print(s.size())
+    print(s.delete())
+    s.print()
