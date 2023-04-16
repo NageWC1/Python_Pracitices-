@@ -8,10 +8,26 @@ class LinkedList:
         self.head = None
     
     def insert_at_beggining(self, data):
-        pass
+        node = Node(data, self.head)
+        self.head = node
 
     def insert_at_end(self, data):
-        pass
+        if self.head is None:
+            self.head = Node(data, None)
+            return 
+
+        itr = self.head 
+        while itr.next:
+            itr = itr.next
+        itr.next = Node(data, None)
+    
+    def print(self):
+        l_str = ''
+        itr = self.head 
+        while itr:
+            l_str = str(itr.data) + '-->'
+            itr = itr.next
+        print(l_str)
 
     def insert_at_index(self, ind, data):
         pass
@@ -24,4 +40,10 @@ class LinkedList:
 
 if __name__ == "__main__":
     ll = LinkedList()
-    
+    ll.insert_at_beggining(10)
+    ll.insert_at_beggining(11)
+    ll.insert_at_beggining(12)
+    ll.insert_at_end(23)
+    ll.insert_at_end(24)
+    ll.insert_at_end(25)
+    ll.print()
