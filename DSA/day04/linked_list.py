@@ -42,13 +42,32 @@ class LinkedList:
 
 
     def insert_at_index(self, ind, data):
-        pass
+        count = 0 
+        itr = self.head 
+        while itr:
+            if count == ind - 1:
+                node = Node(data, itr.next)
+                itr.next = node
+            itr = itr.next 
+            count += 0
 
-    def list_size(slelf):
-        pass
+    def list_size(self):
+        itr = self.head
+        count = 0
+        while itr:
+            itr = itr.next
+            count += 1
+        print(count)
 
     def insert_after(self,ind, data):
-        pass
+        itr = self.head
+        count = 0
+        while itr:
+            if count == ind:
+                node = Node(data, itr.next)
+                itr.next = node
+            itr = itr.next
+            count += 1
 
 if __name__ == "__main__":
     ll = LinkedList()
@@ -60,4 +79,7 @@ if __name__ == "__main__":
     ll.insert_at_end(25)
     ll.print()
     ll.remove_at(3)
+    ll.print()
+    ll.insert_after(2,100)
+    ll.list_size()
     ll.print()
