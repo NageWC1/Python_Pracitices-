@@ -4,17 +4,39 @@ class Node:
         self.next = next
     
 class LinkedList:
+    def __init__(self):
+        self.head = None
+
     def insert_at_beggining(self, data):
-        pass
+        node = Node(data,self.head)
+        self.head = node
 
     def insert_at_end(self, data):
-        pass 
+        if self.head is None:
+            self.head = (data, None)
+        itr = self.head 
+        while itr.next:
+            itr =  itr.next
+        itr.next = Node(data, None)
 
     def print(self):
-        pass
+        itr = self.head
+        l_str = ""
+        while itr:
+            l_str += str(self.data) + "-->"
+            itr = itr.next
+        print(l_str)
 
     def remove_at(self, ind):
-        pass
+        count = 0 
+        itr = self.head 
+        if ind == count:
+            self.head = None
+        while itr:
+            if count == ind - 1:
+                itr.next = itr.next.next
+                break
+            itr =itr.next
 
 if __name__ == "__main__":
     l = LinkedList()
