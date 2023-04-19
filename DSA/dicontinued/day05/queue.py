@@ -5,7 +5,13 @@ class Queue:
         self.buffer = deque()
     
     def enqueue(self, data):
-        pass 
+        self.buffer.appendleft(data)
 
     def dequeue(self):
-        pass
+        return self.buffer.pop()
+
+    def is_empty(self):
+        return len(self.buffer) == 0
+    
+    def size(self):
+        return len(self.buffer)
