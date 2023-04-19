@@ -15,3 +15,15 @@ class Queue:
     
     def size(self):
         return len(self.buffer)
+    
+
+if __name__ == "__main__":
+    q = Queue()
+    q.enqueue(10)
+    q.enqueue(11)
+    q.enqueue(12)
+    q.enqueue(13)
+    print(q.size())
+    print(q.dequeue())
+    print(q.is_empty())
+    
