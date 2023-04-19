@@ -23,7 +23,7 @@ class LinkedList:
         itr = self.head
         l_str = ""
         while itr:
-            l_str += str(self.data) + "-->"
+            l_str += str(itr.data) + "-->"
             itr = itr.next
         print(l_str)
 
@@ -31,12 +31,13 @@ class LinkedList:
         count = 0 
         itr = self.head 
         if ind == count:
-            self.head = None
+            self.head = itr.next
         while itr:
             if count == ind - 1:
                 itr.next = itr.next.next
                 break
             itr =itr.next
+            count += 1
 
 if __name__ == "__main__":
     l = LinkedList()
