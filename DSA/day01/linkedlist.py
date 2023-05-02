@@ -8,10 +8,6 @@ class LinkedList:
         self.head = None
     
     def insert_at_beggining(self,data):
-        if self.head is None:
-            node = Node(data,None)
-            self.head = node
-
         node = Node(data, self.head)
         self.head = node
 
@@ -30,7 +26,7 @@ class LinkedList:
         itr = self.head
 
         while itr:
-            l_str += str(itr.data) + "-->s"
+            l_str += str(itr.data) + "-->"
             itr = itr.next
         print(l_str)
 
@@ -41,4 +37,7 @@ if __name__ == "__main__":
     ll.insert_at_beggining(10)
     ll.insert_at_beggining(11)
     ll.insert_at_beggining(12)
+    ll.insert_at_end(50)
+    ll.insert_at_end(51)
+    ll.insert_at_end(52)
     ll.print()
