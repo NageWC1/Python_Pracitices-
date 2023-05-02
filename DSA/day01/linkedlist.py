@@ -30,6 +30,20 @@ class LinkedList:
             itr = itr.next
         print(l_str)
 
+    def delete_at(self, ind):
+        itr = self.head
+        count = 0 
+        while itr:
+            if ind == count:
+                self.head = itr.next
+                break
+            
+            if count == ind - 1:
+                itr.next = itr.next.next
+                break
+
+            itr = itr.next
+            count += 1
 
 if __name__ == "__main__":
     ll = LinkedList()
@@ -40,4 +54,6 @@ if __name__ == "__main__":
     ll.insert_at_end(50)
     ll.insert_at_end(51)
     ll.insert_at_end(52)
+    ll.delete_at(0)
+    ll.delete_at(2)
     ll.print()
