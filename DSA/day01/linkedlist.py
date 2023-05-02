@@ -45,6 +45,17 @@ class LinkedList:
             itr = itr.next
             count += 1
 
+    def insert_after_at(self, data, ind):
+        count = 0
+        itr = self.head
+        while itr:
+            if count == ind:
+                node = Node(data, itr.next)
+                itr.next = node
+                break
+            itr = itr.next
+            count += 1
+
 if __name__ == "__main__":
     ll = LinkedList()
 
@@ -54,6 +65,8 @@ if __name__ == "__main__":
     ll.insert_at_end(50)
     ll.insert_at_end(51)
     ll.insert_at_end(52)
+    ll.print()
     ll.delete_at(0)
     ll.delete_at(2)
+    ll.insert_after_at(0,0)
     ll.print()
