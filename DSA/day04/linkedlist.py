@@ -43,6 +43,26 @@ class LinkedList:
             l_str += str(itr.data) + "-->"
             itr = itr.next
         print(l_str)
+    
+    def insert_after_at(self, data, ind):
+        count = 0
+        itr = self.head 
+        while itr:
+            if count == ind:
+                node = Node(data, itr.next)
+                itr.next = node
+                break
+            itr = itr.next
+            count += 1
+    def insert_before_at(self, data, ind):
+        count = 0
+        itr = self.head 
+        while itr:
+            if count == ind - 1:
+                node = Node(data, itr.next)
+                itr.next = node
+            itr = itr.next
+            count += 1  
 
 if __name__ == "__main__":
     l = LinkedList()
@@ -57,4 +77,10 @@ if __name__ == "__main__":
     l.remove_at(4)
     l.remove_at(4)
     l.remove_at(3)
+    l.print()
+    l.insert_after_at(111,0)
+    l.print()
+    l.insert_before_at(888,4)
+    l.print()
+    l.insert_before_at(999,4)
     l.print()
