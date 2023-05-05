@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, data:None, next:None):
-        data = data 
-        next = next 
+        self.data = data 
+        self.next = next 
 
 class LinkedList:
     def __init__(self):
@@ -13,7 +13,8 @@ class LinkedList:
     
     def insert_at_end(self, data):
         if self.head is None:
-            self.insert_at_beggining(data)
+            node = Node(data, None)
+            self.head = node
         
         itr = self.head 
         while itr.next:
@@ -39,6 +40,21 @@ class LinkedList:
         l_str = ""
         itr = self.head 
         while itr:
-            l_str += str(itr.dat) + "-->"
+            l_str += str(itr.data) + "-->"
             itr = itr.next
         print(l_str)
+
+if __name__ == "__main__":
+    l = LinkedList()
+    l.insert_at_beggining(10)
+    l.insert_at_beggining(11)
+    l.insert_at_beggining(12)
+    l.insert_at_beggining(13)
+    l.insert_at_end(20)
+    l.insert_at_end(22)
+    l.insert_at_end(23)
+    l.print()
+    l.remove_at(4)
+    l.remove_at(4)
+    l.remove_at(3)
+    l.print()
