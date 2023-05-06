@@ -40,10 +40,9 @@ class LinkedList:
         itr = self.head 
 
         while itr:
-            if ind == 0:
-                raise Exception("can take 0 position")
+            
             if count == ind - 1:
-                node = Node(itr.next)
+                node = Node(data, itr.next)
                 itr.next = node
                 break
 
@@ -77,5 +76,15 @@ if __name__ == "__main__":
     l.insert_at_beg(10)
     l.insert_at_beg(11)
     l.insert_at_beg(12)
-    l.insert_at_beg(13)
+    l.print()
+    l.insert_at_end(100)
+    l.insert_at_end(101)
+    l.insert_at_end(102)
+    l.insert_at_end(103)
+    l.print()
+    l.insert_after_at(0,99)
+    l.print()
+    l.insert_before_at(1,88)
+    l.print()
+    l.remove_at(1)
     l.print()
