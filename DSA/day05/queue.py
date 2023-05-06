@@ -7,7 +7,7 @@ class Queue:
     def enqueue(self, data):
         self.buffer.appendleft(data)
     
-    def dequeue(self, data):
+    def dequeue(self):
         return  self.buffer.pop()
     
     def size(self):
