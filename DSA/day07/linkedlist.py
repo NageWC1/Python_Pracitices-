@@ -51,7 +51,7 @@ class LinkedList:
         count = 0
         while itr:
             if count == ind:
-                node = (data, itr.next)
+                node = Node(data, itr.next)
                 itr.next = node
                 break
             itr = itr.next
@@ -95,3 +95,4 @@ if __name__ == "__main__":
     l.insert_after_at(4,7777)
     l.print()
     l.insert_after_at(0,1000)
+    l.print()
