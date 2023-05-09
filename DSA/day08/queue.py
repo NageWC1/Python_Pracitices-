@@ -16,3 +16,13 @@ class Queue:
     def is_empty(self):
         return len(self.buffer) == 0 
 
+if __name__ == "__main__":
+    q = Queue()
+    q.enqueue(10)
+    q.enqueue(11)
+    q.enqueue(13)
+    q.enqueue(14)
+    print(q.dequeue())
+    print(q.dequeue())
+    print(q.size())
+    print(q.is_empty())
