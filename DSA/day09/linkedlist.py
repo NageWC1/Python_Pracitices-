@@ -8,16 +8,56 @@ class LinkedList:
         self.head = None
     
     def insert_at_beggining(self, data):
-        pass
+        node = Node(data, self.head)
+        self.head = node
 
     def insert_at_end(self, data):
-        pass 
+        if self.head is None:
+            node = Node(data, None)
+            self.head = None
+        
+        itr = self.head 
+        while itr.next:
+            itr = itr.next 
+        
+        node = Node(data, None)
+        itr.next = node
 
     def print(self):
-        pass
+        l_str = ""
+        itr = self.head 
+        while itr:
+            l_str += str(itr.data) + "-->"
+            itr = itr.next
+        print(l_str)
 
-    def remove_at(self):
-        pass 
+    def remove_at(self, ind):
+        count = 0
+        itr = self.head 
+        while itr:
+            if ind == 0:
+                self.head = itr.next
+                break
+            if count == ind - 1:
+                itr.next = itr.next.next
+                break
+            count += 1
+            itr = itr.next 
 
 if __name__ == "__main__":
     l = LinkedList()
+    l.insert_at_beggining(10)
+    l.insert_at_beggining(11)
+    l.insert_at_beggining(12)
+    l.insert_at_beggining(13)
+    l.insert_at_beggining(14)
+    l.insert_at_beggining(15)
+    l.print()
+    l.insert_at_end(100)
+    l.insert_at_end(101)
+    l.insert_at_end(102)
+    l.insert_at_end(103)
+    l.print()
+    l.remove_at(1)
+    l.remove_at(0)
+    l.print()
