@@ -87,7 +87,7 @@ if __name__ == "__main__":
     l.remove_at(3)
     l.remove_at(0)
     l.print()
-    l.insert_after_at(0, 19898)
+    l.insert_after_at(0, 1)
     l.print()
     l.insert_before_at(0,9999)
     l.print()
