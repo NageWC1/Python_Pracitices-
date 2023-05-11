@@ -5,16 +5,16 @@ class Stack:
         self.buffer = deque()
     
     def insert(self, data):
-        pass
+        self.buffer.append(data)
 
     def pop(self):
-        pass
+        return self.buffer.pop()
 
     def size(self):
-        pass
+        return len(self.buffer)
 
     def is_empty(self):
-        pass
+        return len(self.buffer) == 0
 
 if __name__ == "__main__":
     s = Stack()
