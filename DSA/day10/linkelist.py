@@ -55,3 +55,7 @@ if __name__ == "__main__":
     l.insert_at_end(103)
     l.insert_at_end(104)
     l.print()
+    l.remove_at(0)
+    l.remove_at(3)
+    l.remove_at(2)
+    l.print()
