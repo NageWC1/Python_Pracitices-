@@ -18,3 +18,14 @@ class Queue:
 
 if __name__ == "__main__":
     q = Queue()
+    q.enqueue(10)
+    q.enqueue(11)
+    q.enqueue(12)
+    q.enqueue(13)
+    q.enqueue(14)
+    print(q.dequeu())
+    print(q.dequeu())
+    print(q.dequeu())
+    print(q.dequeu())
+    print(q.size())
+    print(q.is_empty())
