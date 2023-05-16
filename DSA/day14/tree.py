@@ -9,16 +9,21 @@ class TreeNode:
         self.children.append(child)
 
     def print_tree(self):
-        print(self.data)
+        level =  self.get_level()
+        spaces =  " " * level * 3
+        print(spaces + self.data )
         if len(self.children):
             for child in self.children:
                 child.print_tree()
 
-def get_level(self):
-    level = 0 
-    while self.parent:
-        level += 1
-    return level
+    def get_level(self):
+        level = 0 
+        p = self.parent
+        while p:
+            p = p.parent
+            level += 1
+        return level
+    
 def build_product_tree():
     root = TreeNode("Electronic")
     laptop = TreeNode("laptop")
