@@ -47,12 +47,14 @@ class LinkedLsit:
                 itr.next = node
                 break
             itr = itr.next
+            count += 1
     def print(self):
         itr = self.head 
         l_str = ""
         while itr:
-            l_str = str(itr.data) + "-->"
+            l_str += str(itr.data) + "-->"
             itr = itr.next
+        print(l_str)
 
 if __name__ == "__main__":
     l = LinkedLsit()
@@ -60,4 +62,12 @@ if __name__ == "__main__":
     l.insert_at_beg(11)
     l.insert_at_beg(12)
     l.insert_at_beg(13)
+    l.print()
+    l.insert_at_end(100)
+    l.insert_at_end(101)
+    l.insert_at_end(102)
+    l.insert_at_end(103)
+    l.print()
+    l.insert_after_at(0, 121221)
+    l.insert_after_at(3, 121221)
     l.print()
