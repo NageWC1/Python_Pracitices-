@@ -16,3 +16,9 @@ class TreeNode:
             p = p.parent
             level += 1
         return level
+    
+    def printTree(self):
+        level = self.getLevel()
+        space = " " * level * 3
+        prefix = space + "|__" if self.parent else ""
+        print(prefix + self.data)
