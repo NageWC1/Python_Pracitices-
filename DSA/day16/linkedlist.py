@@ -30,7 +30,7 @@ class LinkedList:
             if count == ind - 1:
                 itr.next = itr.next.next
                 break
-            itr = itr.head 
+            itr = itr.next 
             count += 1
     
     def print(self):
@@ -41,3 +41,21 @@ class LinkedList:
             itr = itr.next 
         print(l_str)
 
+if __name__ == "__main__":
+    l = LinkedList()
+    l.insert_at_beg(10)
+    l.insert_at_beg(11)
+    l.insert_at_beg(12)
+    l.insert_at_beg(13)
+    l.insert_at_beg(14)
+    l.print()
+    l.insert_at_end(100)
+    l.insert_at_end(101)
+    l.insert_at_end(102)
+    l.insert_at_end(103)
+    l.insert_at_end(104)
+    l.print()
+    l.remove_at(0)
+    l.remove_at(2)
+    l.remove_at(4)
+    l.print()
