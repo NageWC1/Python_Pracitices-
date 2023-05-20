@@ -9,10 +9,19 @@ class TreeNode:
         self.children.append(child)
     
     def print_tree(self):
-        pass
+        space = self.getLevel() * " " * 3
+        prefix =  space + "|__"  if self.parent else ""
+        print(prefix + str(self.data))
+        for child in self.children:
+            child.print_tree()
 
-    def getLeve(self):
-        pass
+    def getLevel(self):
+        level = 0
+        p = self.parent
+        while p:
+            p = p.parent
+            level += 1
+        return level 
 
 def builtree():
     root = TreeNode("Electronic")
