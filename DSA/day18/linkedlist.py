@@ -42,4 +42,18 @@ class LinkedList:
         print(l_str)
 
 if __name__ == "__main__":
-    pass
+    l = LinkedList()
+    l.insert_beg(10)
+    l.insert_beg(11)
+    l.insert_beg(12)
+    l.insert_beg(13)
+    l.print()
+    l.insert_end(100)
+    l.insert_end(101)
+    l.insert_end(102)
+    l.insert_end(103)
+    l.print()
+    l.remove_at(1)
+    l.remove_at(4)
+    l.remove_at(2)
+    l.print()
