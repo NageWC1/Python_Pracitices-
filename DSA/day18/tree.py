@@ -11,9 +11,9 @@ class TreeNode:
     def printTree(self):
         space = self.getLevel() * " " * 3
         prefix = space + "|__" if self.parent else ""
-        print(self.data)
+        print(prefix + self.data)
         for child in self.children:
-            self.printTree()
+            child.printTree()
 
     def getLevel(self):
         level = 0
@@ -51,7 +51,11 @@ def buildTree():
     phone.add_child(samsung)
     phone.add_child(pad)
 
+    root.add_child(laptop)
+    root.add_child(phone)
+    root.add_child(tv)
     return root
 
 if __name__ == "__main__":
-    pass
+    root = buildTree()
+    root.printTree()
