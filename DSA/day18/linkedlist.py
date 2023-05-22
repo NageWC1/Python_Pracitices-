@@ -33,6 +33,18 @@ class LinkedList:
             itr = itr.next
             count += 1
 
+    def insert_after_at(self, ind, data):
+        count = 0 
+        itr = self.head 
+        while itr:
+            if count == ind:
+                node = Node(data, itr.next)
+                itr.next = node
+                break
+
+            itr = itr.next 
+            count += 1
+            
 
     def print(self):
         l_str = ""
@@ -57,4 +69,7 @@ if __name__ == "__main__":
     l.remove_at(1)
     l.remove_at(4)
     l.remove_at(2)
+    l.print()
+    l.insert_after_at(0,1999)
+    l.insert_after_at(3,1999)
     l.print()
