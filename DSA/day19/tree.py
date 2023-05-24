@@ -54,3 +54,8 @@ def build_tree():
     root.add_child(phone)
     root.add_child(tv)
     return root
+
+
+if __name__ == "__main__":
+    root = build_tree()
+    root.print_tree()
