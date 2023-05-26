@@ -8,8 +8,21 @@ class TreeNode:
         child.parent = self
         self.children.append(child)
     
-    def get_leve(self):
-        pass
+    def get_level(self):
+        level = 0
+        p = self.parent
+        while p:
+            level += 1
+            p = p.parent
+        return level
+    
+    def print_tree(self):
+        space = self.get_level() * " " * 3
+        prefix = space + "|__" if self.parent else ""
+        print(prefix+self.data)
+        for child in self.children:
+            child.print_tree()
+            
 
 if __name__ == "__main__":
     pass
