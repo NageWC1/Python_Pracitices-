@@ -21,3 +21,36 @@ class TreeNode:
         print(prefix + self.data)
         for child in self.children:
             child.print()
+
+def build_tree():
+    root = TreeNode("Electronic")
+    laptop = TreeNode("Laptop")
+    tv = TreeNode("TV")
+    phone = TreeNode("Phone")
+
+    iphone = TreeNode('iphone')
+    samsun = TreeNode('samsung')
+    oppo = TreeNode('oppo')
+    phone.add_child(iphone)
+    phone.add_child(samsun)
+    phone.add_child(oppo)
+
+    sony = TreeNode("Sony")
+    abanse = TreeNode("abanse")
+    singer = TreeNode("singer")
+    tv.add_child(sony)
+    tv.add_child(abanse)
+    tv.add_child(singer)
+
+    lenova = TreeNode('Lenova')
+    apple = TreeNode('apple')
+    hp = TreeNode('hp')
+    laptop.add_child(lenova)
+    laptop.add_child(apple)
+    laptop.add_child(hp)
+
+    root.add_child(laptop)
+    root.add_child(tv)
+    root.add_child(phone)
+
+    return root
