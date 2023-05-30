@@ -6,6 +6,7 @@ class TreeNode:
     
     def add_child(self, child):
         child.parent = self
+        self.children.append(child)
     
     def getLevel(self):
         level = 0
@@ -16,7 +17,7 @@ class TreeNode:
         return level
     
     def print(self):
-        space  = self.getLevel  * " " * 3
+        space  = self.getLevel()  * " " * 3
         prefix = space + "|__" if self.parent else ""
         print(prefix + self.data)
         for child in self.children:
@@ -54,3 +55,7 @@ def build_tree():
     root.add_child(phone)
 
     return root
+
+if __name__ == "__main__":
+    root = build_tree()
+    root.print()
