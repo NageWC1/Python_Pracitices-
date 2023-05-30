@@ -14,7 +14,8 @@ class Stack:
         return len(self.buffer)
     
     def is_empty(self):
-        return self.buffer
+        return len(self.buffer) == 0
+
 
 if __name__ == "__main__":
     s = Stack()
