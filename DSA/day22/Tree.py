@@ -59,3 +59,7 @@ def buildTree():
     root.add_child(phone)
 
     return root
+
+if __name__ == "__main__":
+    root = buildTree()
+    root.print()
