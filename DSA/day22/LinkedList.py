@@ -52,10 +52,26 @@ class LinkedList:
         l_str = ""
         itr = self.head
         while itr:
-            l_str += str(itr.data)
+            l_str += str(itr.data)+ "-->"
             itr = itr.next
         print(l_str)
 
 if __name__ == "__main__":
-    pass
+    l = LinkedList()
+
+    l.insert_at_beg(10)
+    l.insert_at_beg(11)
+    l.insert_at_beg(13)
+    l.insert_at_beg(14)
+    l.print()
+    l.insert_at_end(100)
+    l.insert_at_end(101)
+    l.insert_at_end(102)
+    l.print()
+    l.remove_at(0)
+    l.remove_at(2)
+    l.print()
+    l.insert_before_at(0,111)
+    l.insert_before_at(3,121212)
+    l.print()
 
