@@ -30,13 +30,46 @@ class LinkedList:
                 itr.next = node
                 break
             itr = itr.next 
-            coun += 1 
+            count += 1 
 
     def print(self):
-        pass
+        l_str = ""
+        itr = self.head 
+        while itr:
+            l_str += str(itr.data) + "-->"
+            itr = itr.next 
+        print(l_str)
 
     def remove_at(self, ind):
-        pass
+        count = 0 
+        itr =self.head
+        while itr:
+            if ind == 0:
+                self.head = itr.next
+                break
+            if count == ind - 1:
+                itr.next = itr.next.next 
+                break
+            itr = itr.next 
+            count += 1
 
 if __name__ == "__main__":
     l = LinkedList()
+    l.insert_at_beg(10)
+    l.insert_at_beg(11)
+    l.insert_at_beg(12)
+    l.insert_at_beg(13)
+    l.print()
+    l.insert_at_end(100)
+    l.insert_at_end(101)
+    l.insert_at_end(102)
+    l.insert_at_end(103)
+    l.print()
+    l.insert_after_at(0,199)
+    l.insert_after_at(3,199)
+    l.insert_after_at(4,199)
+    l.print()
+    l.remove_at(0)
+    l.remove_at(4)
+    l.remove_at(2)
+    l.print()
