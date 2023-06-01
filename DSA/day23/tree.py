@@ -5,13 +5,24 @@ class TreeNode:
         self.parent = None
     
     def add_child(self, child):
-        pass
+        child.parent = self
+        self.children.append(child)
 
     def get_level(self):
-        pass
-
+        level = 0 
+        p = self.parent 
+        while p:
+            p = p.parent
+            level += 1
+        return level
+    
     def print(self):
-        pass
+        space = self.get_level() * " " * 3
+        prefix = space + "|__" if self.parent else ""
+        print(prefix + self.data)
+        for child in self.children:
+            child.print()
 
 if __name__ == "__main__":
-    pass
+    root = Buildtree()
+    root.print()
