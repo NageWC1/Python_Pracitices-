@@ -23,7 +23,7 @@ class TreeNode:
         for child in self.children:
             child.print()
 def Buildtree():
-    root = TreeNode("Electrnic")
+    root = TreeNode("Electronic")
     
     laptop = TreeNode("Laptop")
     tv = TreeNode("TV")
