@@ -40,7 +40,7 @@ class LinkedList:
         itr = self.head 
         l_str = ""
         while itr:
-            l_str += str(self.data) + "-->"
+            l_str += str(itr.data) + "-->"
             itr = itr.next 
         print(l_str)
 
@@ -63,3 +63,15 @@ if __name__ == "__main__":
     l.insert_at_start(11)
     l.insert_at_start(12)
     l.insert_at_start(13)
+    l.print()
+    l.insert_at_end(200)
+    l.insert_at_end(201)
+    l.insert_at_end(202)
+    l.insert_at_end(203)
+    l.print()
+    l.insert_before(0,12221)
+    l.insert_before(2,999)
+    l.print()
+    l.remove_at(0)
+    l.remove_at(4)
+    l.print()
