@@ -1,5 +1,5 @@
 class TreeNode:
-    def __inti__(self, data):
+    def __init__(self, data):
         self.data = data
         self.children = []
         self.parent = None
@@ -24,8 +24,7 @@ class TreeNode:
             child.print()
 def buildTree():
     root = TreeNode("Electronic")
-  
-    
+
     laptop = TreeNode("Laptop")
     tv = TreeNode("TV")
     phone = TreeNode("Phone")
@@ -60,4 +59,5 @@ def buildTree():
     return root
 
 if __name__ == "__main__":
-    pass
+    root = buildTree()
+    root.print()
